@@ -1,8 +1,8 @@
 {
   "name": "com.fixer33.input-manager",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "displayName": "Input Manager",
-  "description": "Input Manager package",
+  "description": "Read input by action name from any number of sources (Input System, legacy Input Manager, code). Simulated input from tests and on-screen controls arrives exactly where player input does.",
   "unity": "6000.0",
   "author": {
     "name": "Fixer33",

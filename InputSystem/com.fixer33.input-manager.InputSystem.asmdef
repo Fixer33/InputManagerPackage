@@ -1,0 +1,25 @@
+{
+    "name": "com.fixer33.input-manager.InputSystem",
+    "rootNamespace": "Fixer33.InputManager.InputSystemSupport",
+    "references": [
+        "com.fixer33.input-manager",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "FIXER33_INPUT_SYSTEM"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.4.0",
+            "define": "FIXER33_INPUT_SYSTEM"
+        }
+    ],
+    "noEngineReferences": false
+}
