@@ -1,0 +1,33 @@
+{
+    "name": "com.fixer33.input-manager.InputSystem.Tests",
+    "rootNamespace": "Fixer33.InputManager.Tests.InputSystemSupport",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "com.fixer33.input-manager",
+        "com.fixer33.input-manager.InputSystem",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS",
+        "FIXER33_INPUT_SYSTEM"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.4.0",
+            "define": "FIXER33_INPUT_SYSTEM"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -64,6 +64,24 @@ Implement `IInputSource` and register it with `GameInput.AddSource`. Return fals
 ## EditMode tests
 Edge detection needs `GameInput.Tick()` once per frame; in Play Mode the package does it. In EditMode tests call `GameInput.Reset()` in `[SetUp]` and `GameInput.Tick()` where a frame would pass.
 
+## Control hint glyphs (Input System)
+
+Needs the Input System package (compiled in `com.fixer33.input-manager.InputSystem`). Namespace `Fixer33.InputManager.InputSystemSupport.Glyphs`.
+
+```csharp
+// Text for the interact key on the device the player uses right now; follows rebinding.
+if (BindingGlyphs.TryResolve(interactAction, ActiveInputDevice.Current, out BindingGlyph glyph))
+    label.text = glyph.DisplayString;      // "E" on keyboard, "Button South" on gamepad
+
+ActiveInputDevice.Changed += kind => RefreshHints();   // player switched keyboard <-> gamepad
+```
+
+- `TryResolve(action, device, keyboardMouseOverride, out glyph)`: the override replaces the keyboard/mouse text for bindings that read badly (mouse delta, the number row). Returns false when the action has no binding for that device: hide the hint then.
+- `TryResolveAny(action, preferred, out glyph)`: preferred device first, then any other.
+- `ActiveInputDevice.Current` starts as keyboard and mouse and changes on any button press. `Set(kind)` overrides it (tests, custom detection).
+
+Which hints to show (by game state, held item, etc.) and how to draw them is game code; this package only answers "what does this action's key look like on this device".
+
 ## Pitfalls
 - A button's first press is detected as an edge only if the action was tracked before it was pressed. Reading the action every frame (normal game code) or injecting through `GameInput.Virtual` does that automatically; otherwise call `GameInput.Track("Action")` at startup.
 - With Enter Play Mode Options (no domain reload) the package resets itself on play.

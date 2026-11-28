@@ -1,3 +1,10 @@
+## [1.2.0] - 2026-11-28
+
+### Added
+- Binding glyphs (Input System assembly, namespace `Fixer33.InputManager.InputSystemSupport.Glyphs`): `BindingGlyphs.TryResolve` gives the display string of an action's current binding for keyboard and mouse, gamepad or touch (composites count as one binding, optional keyboard text override); `TryResolveAny` falls back to other devices; `KindOf` maps a control or device to `InputDeviceKind`.
+- `ActiveInputDevice`: the device kind the player pressed last, with a `Changed` event, for switching hints between key caps and gamepad icons.
+- EditMode tests for both (`Tests/InputSystem`).
+
 ## [1.1.0] - 2026-11-28
 
 ### Added
